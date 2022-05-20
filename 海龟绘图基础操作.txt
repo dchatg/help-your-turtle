@@ -1,0 +1,140 @@
+首先需要
+        import turtle as xxx
+        
+操作行为
+    移动和绘制
+        传入一个整数int或浮点数flot
+            forward(x) | fd() 前进  
+            backward(x) | bk() | back() 后退
+        传入一个整数或浮点数，默认为角度，但可通过 degrees()角度 和 radians()弧度 函数改变
+            right(x) | rt() 右转
+            left(x) | lt() 左转
+        传入一个(x,y),或(x)y默认为0
+            goto() | setpos() | setposition() 前往/定位
+        传入x or y 整数或浮点数
+            setx(x) 设置x坐标，纵坐标不变
+            sety(y) 设置y坐标 ，横坐标不变
+        传入一个整数或浮点数，0为东，180 为西
+            setheading() | seth() 设置朝向
+        返回原点(0,0)
+            home() 返回原点
+        传入一个固有数值，两个可选数值
+            circle(数值，可选1，可选2) 画圆,圆心在运动方向的左边
+            可选1: extent(决定是否画一整个圆，180为半圆)
+            可选2：steps(边数，传入一个整数可用来绘制正多边形)
+        传入两个可选数值
+            dot(可选1size,可选2 颜色(双引号包含的颜色，如"blue")) 画点
+            可选1：size，点的直径，如未制定，默认取 pensize+4 和 2*pensize 中的较大值。
+            可选2: 颜色(双引号包含的颜色，如"blue")
+        无需传入数值，在当前位置绘制一个海龟形状，并返回一个stamp_id
+            stamp() 印章
+        传入上个stamp()返回的stamp_id
+            clearstamp() 清除印章
+        传入一可选数值
+            clearstamps(n) 清除多个印章
+            删除全部或前/后 n 个海龟印章。如果 n 为 None 则删除全部印章
+            n大于0删除前n个，n小于0删除后n个
+        无需传入数值，撤消 (或连续撤消) 最近的一个 (或多个) 海龟动作
+            undo() 撤消
+        传入一个可选数值，设置移动速度，默认为
+            speed(speed) 速度
+            speed,0~10的整数或('slowest','slow','normal','fast','fastest')
+    无需传入数值，返回当前海龟的状态
+        position() | pos() 位置，返回坐标(x,y)
+        towards() 目标方向,返回海龟位置到由 (x,y)、矢量或另一海龟所确定位置的连线的夹角
+        xcor() x坐标
+        ycor() y坐标
+        heading() 朝向
+        distance() 距离
+    设置角度度量单位
+        degrees() 角度 设置为角度
+        radians() 弧度 设置为弧度
+对画笔控制
+    绘图状态
+        移动时画线
+            pendown() | pd() | down() 画笔落下
+        移动时不画线
+            penup() | pu() | up() 画笔抬起
+        传入一个正整数，设置画笔的粗细，未传入数值则返回当前画笔粗细size
+            pensize() | width() 画笔粗细
+        返回或设置画笔的属性
+            pen() 画笔
+        返回画笔的状态
+            isdown() 画笔是否落下True(落下) or False(抬起)
+    颜色控制
+        返回或设置画笔颜色
+            pencolor() 返回画笔颜色
+            pencolor('red') 画笔颜色如'red'
+            pencolor(r,g,b) 画笔颜色RGB值，0~255
+        返回或设置填充颜色
+            fillcolor() 返回填充颜色
+            fillcolor('red') 填充颜色为'red'
+            fillcolor(r,g,b) 填充颜色的RGB值（0~255）
+        返回设置画笔颜色和填充颜色
+            color() 返回一对字符串或元组表示当前画笔颜色和他填充颜色
+            color('red')/color(r,g,b) 同时设置画笔颜色与填充颜色
+            color('red','yellow')/color((r,g,b),(r,g,b))设置颜色和填充颜色，两个格式需相同
+    填充
+        返回填充状态
+            filling() 是否填充 返回 True or False
+        绘制需填充形状前调用
+            begin_fill() 开始填充
+        结束绘制后调用
+            end_fill() 结束填充
+    更多绘图控制
+        删除所有绘图并回到原点，所有变量为默认值
+            reset() 重置
+        删除制定的绘图(stamp_id)，不移动状态和位置，其他绘图不受影响
+            clear() 清空
+        指定文本写到当前位置，move=True 时 画笔移动到文本右下角，默认为False
+            write() 书写
+        
+海龟状态
+    可见性控制
+        showturtle() | st() 显示海龟,可见
+        hideturtle() | ht() 隐藏海龟,不可见
+        isvisible() 是否可见返回True or False
+    外观
+        返回或设置形状
+            shape() 返回形状
+            shape("turtle") 设置形状为"turtle"
+        调整外观
+            resizemode() 返回当前大小调整模式
+            resizemode("auto"or"user"or"noresize")
+                auto:根据画笔调整外观
+                user:根据拉伸和轮廓宽度调整外观
+                noresize:不调整外观大小
+        返回或设置画笔的属性
+            shapesize() | turtlesize() 返回形状属性
+            可选参数"user"/"stretch_wid"/"stretch_len"
+            user:当且仅当大小调整模式设为 "user" 时海龟会基于其拉伸因子调整外观
+            stretch_wid:垂直于其朝向的宽度拉伸因子
+            stretch_len:平等于其朝向的长度拉伸因子，决定形状轮廓线的粗细
+        设置或返回当前的剪切因子
+            shearfactor() 返回剪切因子
+            shearfactor(x) 设置剪切因子为x,x为数值
+        旋转形状指向指定方向，不改变移动方向
+            settiltangle() 设置倾角
+        设置或返回当前倾角
+            tiltangle() 返回倾角
+            tiltangle(x) 设置倾角为x, x为一个数值
+        改变形状的转动角度，不改变移动方向
+            tilt() 倾斜
+        设置或返回当前变形矩阵
+            shapetransform() 返回变形矩阵
+            shapetransform(t1.t2,t3,t4)设置变形矩阵
+        返回以坐标值对 元组表示的当前多边形形状
+            get_shapepoly() 获取形状多边形的坐标值对(笛卡尔坐标)
+使用事件
+    onclick() 当鼠标点击
+    onrelease() 当鼠标释放
+    ondrag() 当鼠标拖动
+特殊海龟方法
+    begin_poly() 开始记录多边形
+    end_poly() 结束记录多边形
+    get_poly() 获取多边形
+    clone() 克隆
+    getturtle() | getpen() 获取海龟画笔
+    getscreen() 获取屏幕
+    setundobuffer() 设置撤消缓冲区
+    undobufferentries() 撤消缓冲区条目数

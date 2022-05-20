@@ -10,7 +10,7 @@ import tkinter as tk
 
 '''设置页面格式'''
 fre=tk.Tk()
-fre.title('海龟绘图')
+fre.title('turtle绘图')
 fre.geometry('500x600')
 tk_operate=[]
 
@@ -71,23 +71,27 @@ s6.place(x = 10,y = 330)
 def t_up():#上
     global tk_operate
     val1,val2=tle.position()
+    val1,val2=int(val1),int(val2)
     tle.goto(val1,val2+line_b)
-    tk_operate.append(f'tle.goto({val1},{val2+10})\n')
+    tk_operate.append(f'tle.goto({val1},{val2+line_b})\n')
 def t_down():#下
     global tk_operate
     val1,val2=tle.position()
+    val1,val2=int(val1),int(val2)
     tle.goto(val1,val2-line_b)
-    tk_operate.append(f'tle.goto({val1},{val2-10})\n')
+    tk_operate.append(f'tle.goto({val1},{val2-line_b})\n')
 def t_right():#左
     global tk_operate
     val1,val2=tle.position()
+    val1,val2=int(val1),int(val2)
     tle.goto(val1-line_b,val2)
-    tk_operate.append(f'tle.goto({val1-10},{val2})\n')
+    tk_operate.append(f'tle.goto({val1-line_b},{val2})\n')
 def t_left():#右
     global tk_operate
     val1,val2=tle.position()
+    val1,val2=int(val1),int(val2)
     tle.goto(val1+line_b,val2)
-    tk_operate.append(f'tle.goto({val1+10},{val2})\n')
+    tk_operate.append(f'tle.goto({val1+line_b},{val2})\n')
 
 b1=tk.Button(fre,text='上',width=5,height=2,command=t_up)
 b1.place(x=160,y=10)
@@ -342,7 +346,7 @@ roundy=tk.Button(fre,text='角度',width=4,height=1)
 roundy.place(x=60,y=430)
 
 
-def r_round():
+def r_round():#用于绘制圆和圆弧
     global tk_operate
     var1=y_entry1.get()
     var2=y_entry2.get()
@@ -374,7 +378,7 @@ y_entry3y.place(x=155,y=490)
 y_entry3l=tk.Entry(fre,width=5)#半径输入
 y_entry3l.place(x=240,y=490)
 
-def xy_round():
+def xy_round():#用于到指定位置绘制圆
     global tk_operate
     x,y=y_entry3x.get(),y_entry3y.get()
     var1=y_entry3l.get()
@@ -395,6 +399,7 @@ def xy_round():
         tk_operate.append('tle.pendown()')
         tk_operate.append(f'tle.circle({var1})\n')
         
+#round_x_y
 b_rxy=tk.Button(fre,text='指定位置画圆',
                 width=15,height=2,
                 command=xy_round)
@@ -419,8 +424,8 @@ def tk_export():
 export=tk.Button(fre,text='导出操作文件',width=11,height=2,command=tk_export)
 export.place(x=400,y=540)
 
-
-fre.mainloop()
+if __name__ == "__main__":
+    fre.mainloop()
 
 
 
