@@ -38,7 +38,7 @@
 --  
 --
 支持操作
----
+--
 支持画笔抬起penup()、落下pendown()  
   
 支持对海龟的可见性控制，showturtle()、hideturtle()  
