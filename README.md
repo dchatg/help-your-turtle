@@ -7,7 +7,7 @@
 --
 具体使用方法：   
 -- 
-由于turtle填充形状时需要在开始绘制前设置好线条颜色与填充形状  
+由于turtle填充形状时需要在开始绘制前设置线条颜色与填充形状  
 
 所以第一步是设置好线条颜色与填充颜色，为colorstring 指定的 Tk 颜色描述字符串 如'red','yellow','blue','black'等--------这两个默认为黑色 black，写了try except，所以填入错误的字符串会提示
   
@@ -43,17 +43,17 @@
   
 支持对海龟的可见性控制，showturtle()、hideturtle()  
   
-支持左转右转指定角度，right(),left()  
+支持左转右转角度，right(),left()  
   
 支持设置线条宽度,pensize()  
   
 支持设置线条颜色，字符串和RGB皆可 pencolor()、fillcolor()  
   
-支持移动到指定位置（x,y）移动过程中不会留下画迹  
+支持移动到指定位置（x,y),移动过程中不会留下画迹  
   
 支持画圆，画弧，circle(value),circle(value,extent)
   
-支持到指定位置画圆
+支持到指定位置画圆，指定的位置为圆心
 
 支持对画笔线条颜色、填充颜色以RGB设置
   
