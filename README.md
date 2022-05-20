@@ -59,7 +59,7 @@
   
   
 --
---后续代办  
+后续待办 
 --
 
 1、加入文字功能 wirte()  
@@ -71,5 +71,5 @@
 
 
 --
-感谢 莫烦python 录制的tkinter教程
+非常感谢 莫烦python 大佬录制的tkinter教程 http://mofanpy.com
 --
