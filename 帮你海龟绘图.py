@@ -5,7 +5,7 @@ Created on Thu May 19 18:55:47 2022
 @author: dchatg
 """
 
-import turtle as tle
+import turtle as t
 import tkinter as tk
 
 '''设置页面格式'''
@@ -18,18 +18,18 @@ tk_operate=[]
 '''定义按键所需函数'''
 def t_start():#开始
     global tk_operate
-    tle.begin_fill()
-    tle.setheading(90)#初始需要旋转90度将箭头向上
-    tk_operate.append('tle.begin_fill()\n')
-    tk_operate.append(f'tle.setheading({90})\n')
+    t.begin_fill()
+    t.setheading(90)#初始需要旋转90度将箭头向上
+    tk_operate.append('t.begin_fill()\n')
+    tk_operate.append(f't.setheading({90})\n')
 def t_end():#结束
     global tk_operate
-    tle.end_fill()
-    tk_operate.append('tle.end_fill()\n')
+    t.end_fill()
+    tk_operate.append('t.end_fill()\n')
     
 def undo():#撤销
     global tk_operate
-    tle.undo()
+    t.undo()
     try:
         tk_operate.pop()
     except IndexError:
@@ -37,17 +37,17 @@ def undo():#撤销
 def rest():#重置
     global tk_operate
     tk_operate=[]
-    tle.reset()
+    t.reset()
     
 def t_yes():#海龟箭头可见
     global tk_operate
-    tle.hideturtle()
-    tk_operate.append('tle.hideturtle()\n')
+    t.hideturtle()
+    tk_operate.append('t.hideturtle()\n')
 
 def t_no():#箭头不可见
     global tk_operate
-    tle.showturtle()
-    tk_operate.append('tle.showturtle()\n')
+    t.showturtle()
+    tk_operate.append('t.showturtle()\n')
 '''定义开始、结束、撤销、重置等操作按钮'''
 s1 = tk.Button(fre,text='开始',width = 5,height = 2,command = t_start)
 s1.place(x=10,y=10)
@@ -70,28 +70,28 @@ s6.place(x = 10,y = 330)
 '''定义(上下左右)四个按键及指向的操作'''
 def t_up():#上
     global tk_operate
-    val1,val2=tle.position()
+    val1,val2=t.position()
     val1,val2=int(val1),int(val2)
-    tle.goto(val1,val2+line_b)
-    tk_operate.append(f'tle.goto({val1},{val2+line_b})\n')
+    t.goto(val1,val2+line_b)
+    tk_operate.append(f't.goto({val1},{val2+line_b})\n')
 def t_down():#下
     global tk_operate
-    val1,val2=tle.position()
+    val1,val2=t.position()
     val1,val2=int(val1),int(val2)
-    tle.goto(val1,val2-line_b)
-    tk_operate.append(f'tle.goto({val1},{val2-line_b})\n')
+    t.goto(val1,val2-line_b)
+    tk_operate.append(f't.goto({val1},{val2-line_b})\n')
 def t_right():#左
     global tk_operate
-    val1,val2=tle.position()
+    val1,val2=t.position()
     val1,val2=int(val1),int(val2)
-    tle.goto(val1-line_b,val2)
-    tk_operate.append(f'tle.goto({val1-line_b},{val2})\n')
+    t.goto(val1-line_b,val2)
+    tk_operate.append(f't.goto({val1-line_b},{val2})\n')
 def t_left():#右
     global tk_operate
-    val1,val2=tle.position()
+    val1,val2=t.position()
     val1,val2=int(val1),int(val2)
-    tle.goto(val1+line_b,val2)
-    tk_operate.append(f'tle.goto({val1+line_b},{val2})\n')
+    t.goto(val1+line_b,val2)
+    tk_operate.append(f't.goto({val1+line_b},{val2})\n')
 
 b1=tk.Button(fre,text='上',width=5,height=2,command=t_up)
 b1.place(x=160,y=10)
@@ -120,8 +120,8 @@ def t_go():#直行指定距离
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='错误输入')
     else:
-        tle.forward(var)
-        tk_operate.append(f'tle.forward({var})\n')
+        t.forward(var)
+        tk_operate.append(f't.forward({var})\n')
         
 def turn_right():#左转指定角度
     global tk_operate
@@ -131,8 +131,8 @@ def turn_right():#左转指定角度
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='错误输入')
     else:
-        tle.right(var)
-        tk_operate.append(f'tle.right({var})\n')
+        t.right(var)
+        tk_operate.append(f't.right({var})\n')
         
 def turn_left():#右转指定角度
     global tk_operate
@@ -142,18 +142,18 @@ def turn_left():#右转指定角度
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='错误输入')
     else:
-        tle.left(var)
-        tk_operate.append(f'tle.left({var})\n')
+        t.left(var)
+        tk_operate.append(f't.left({var})\n')
         
 def t_penup():#抬起
     global tk_operate
-    tle.penup()
-    tk_operate.append('tle.penup()\n')
+    t.penup()
+    tk_operate.append('t.penup()\n')
     
 def t_pendown():#落下
     global tk_operate
-    tle.pendown()
-    tk_operate.append('tle.pendown()\n')
+    t.pendown()
+    tk_operate.append('t.pendown()\n')
     
 b5=tk.Button(fre,text='直行',width=5,height=2,command=t_go)
 b5.place(x=210,y=170)
@@ -183,12 +183,12 @@ def to_go():#移动到指定位置
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='x,y位置错误输入')
     else:
-        tle.penup()
-        tle.goto(x,y)
-        tle.pendown()
-        tk_operate.append('tle.penup()\n')
-        tk_operate.append(f'tle.goto({x},{y})\n')
-        tk_operate.append('tle.pendown()')
+        t.penup()
+        t.goto(x,y)
+        t.pendown()
+        tk_operate.append('t.penup()\n')
+        tk_operate.append(f't.goto({x},{y})\n')
+        tk_operate.append('t.pendown()')
         
 b_go=tk.Button(fre,text='移动到指定位置',width=14,height=2,command=to_go)
 b_go.place(x=140,y=335)
@@ -218,10 +218,11 @@ def k_d():#turtle线条宽度
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='线条宽度错误输入')
     else:
-        tle.pensize(var)
-        tk_operate.append(f'tle.pensize({var})\n')
+        t.pensize(var)
+        tk_operate.append(f't.pensize({var})\n')
         
-line_b = 5
+        
+line_b = 5#默认步长
 def b_c():#设置线条步长
     global tk_operate
     global line_b
@@ -238,21 +239,21 @@ def y_s():#turtle线条颜色
     global tk_operate
     var=e2.get()
     try:
-        tle.pencolor(var)
-    except tle.TurtleGraphicsError:
+        t.pencolor(var)
+    except t.TurtleGraphicsError:
         tk.messagebox.showinfo(title='错误',message='线条颜色错误输入')
     else:
-        tk_operate.append(f"tle.pencolor('{var}')\n")
+        tk_operate.append(f"t.pencolor('{var}')\n")
 
 def t_s():#turtle填充颜色
     global tk_operate
     var=e3.get()
     try:
-        tle.fillcolor(var)
-    except tle.TurtleGraphicsError:
+        t.fillcolor(var)
+    except t.TurtleGraphicsError:
         tk.messagebox.showinfo(title='错误',message='填充颜色错误输入')
     else:
-        tk_operate.append(f"tle.fillcolor('{var}')\n")
+        tk_operate.append(f"t.fillcolor('{var}')\n")
 
 x1=tk.Button(fre,text='设置线条宽度',width=11,height=2,command=k_d)
 x1.place(x=380,y=15)
@@ -280,7 +281,7 @@ b_entry1.place(x=430,y=310)
 
 def rgb_l():#线条设置函数
     global tk_operate
-    tle.colormode(255)
+    t.colormode(255)
     R,G,B=r_entry1.get(),g_entry1.get(),b_entry1.get()
     try:
         R,G,B=int(R),int(G),int(B)
@@ -288,12 +289,12 @@ def rgb_l():#线条设置函数
         tk.messagebox.showinfo(title='错误',message='线条颜色错误输入')
     else:
         try:
-            tle.pencolor(R,G,B)
-        except tle.TurtleGraphicsError:
+            t.pencolor(R,G,B)
+        except t.TurtleGraphicsError:
             tk.messagebox.showinfo(title='错误',message='数值不在0~255范围内')
         else:
-            tk_operate.append('tle.colormode(255)\n')
-            tk_operate.append(f'tle.pencolor({R},{G},{B})\n')
+            tk_operate.append('t.colormode(255)\n')
+            tk_operate.append(f't.pencolor({R},{G},{B})\n')
 #定义按钮
 rgb_button1=tk.Button(fre,text='设置线条颜色RGB值',
                       width=16,height=2,command=rgb_l)
@@ -303,7 +304,7 @@ rgb_button1.place(x=335,y=340)
 #RGB填充颜色设置
 def rgb_t():#线条
     global tk_operate
-    tle.colormode(255)
+    t.colormode(255)
     R,G,B=r_entry2.get(), g_entry2.get(), b_entry2.get()
     try:
         R,G,B=int(R),int(G),int(B)
@@ -311,12 +312,12 @@ def rgb_t():#线条
         tk.messagebox.showinfo(title='错误',message='填充颜色错误输入')
     else:
         try:
-            tle.fillcolor(R,G,B)
-        except tle.TurtleGraphicsError:
+            t.fillcolor(R,G,B)
+        except t.TurtleGraphicsError:
             tk.messagebox.showinfo(title='错误',message='数值不在0~255范围内')
         else:
-            tk_operate.append('tle.colormode(255)\n')
-            tk_operate.append(f'tle.fillcolor({R},{G},{B})\n')
+            tk_operate.append('t.colormode(255)\n')
+            tk_operate.append(f't.fillcolor({R},{G},{B})\n')
             
 r_entry2=tk.Entry(fre,width=4)
 r_entry2.place(x=330,y=410)
@@ -361,11 +362,11 @@ def r_round():#用于绘制圆和圆弧
             except ValueError:
                 tk.messagebox.showinfo(title='错误',message='角度输入错误')
             else:
-                tle.circle(var1,extent=var2)
-                tk_operate.append(f'tle.circle({var1},extent={var2})\n')
+                t.circle(var1,extent=var2)
+                tk_operate.append(f't.circle({var1},extent={var2})\n')
         else:
-            tle.circle(var1)
-            tk_operate.append(f'tle.circle({var1})\n')
+            t.circle(var1)
+            tk_operate.append(f't.circle({var1})\n')
             
 b_round=tk.Button(fre,text='画圆',width=6,height=2,command=r_round)
 b_round.place(x=180,y=407)
@@ -388,16 +389,16 @@ def xy_round():#用于到指定位置绘制圆
     except ValueError:
         tk.messagebox.showinfo(title='错误',message='位置或半径输入错误')
     else:
-        tle.penup()
-        tle.setheading(90)
-        tle.goto(x+var1,y)
-        tle.pendown()
-        tle.circle(var1)
-        tk_operate.append('tle.penup()\n')
-        tk_operate.append('tle.setheading(90)\n')
-        tk_operate.append(f'tle.circle({var1})\n')
-        tk_operate.append('tle.pendown()')
-        tk_operate.append(f'tle.circle({var1})\n')
+        t.penup()
+        t.setheading(90)
+        t.goto(x+var1,y)
+        t.pendown()
+        t.circle(var1)
+        tk_operate.append('t.penup()\n')
+        tk_operate.append('t.setheading(90)\n')
+        tk_operate.append(f't.circle({var1})\n')
+        tk_operate.append('t.pendown()')
+        tk_operate.append(f't.circle({var1})\n')
         
 #round_x_y
 b_rxy=tk.Button(fre,text='指定位置画圆',
@@ -417,16 +418,18 @@ btext.place(x=200,y=485)
 def tk_export():
     global tk_operate
     with open('海龟绘图操作导出.txt','w') as tul:#创建导出文件
-        tul.write('import turtle as tle\n')
+        tul.write('import turtle as t\n')
         for i in tk_operate:
             tul.write(i)
+        tul.write('t.exitonclick()')
             
 export=tk.Button(fre,text='导出操作文件',width=11,height=2,command=tk_export)
 export.place(x=400,y=540)
 
+
 if __name__ == "__main__":
     fre.mainloop()
-
+    t.exitonclick()
 
 
 
