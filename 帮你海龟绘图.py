@@ -438,22 +438,3 @@ if __name__ == "__main__":
     fre.mainloop()
     t.exitonclick()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
