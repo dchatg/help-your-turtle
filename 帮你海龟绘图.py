@@ -2,7 +2,7 @@
 """
 Created on Sat May 21 15:16:12 2022
 
-@author: x5786
+@author: dchatg
 """
 
 import turtle as t
@@ -22,6 +22,7 @@ def t_start():#开始
     t.setheading(90)#初始需要旋转90度将箭头向上
     tk_operate.append('t.begin_fill()\n')
     tk_operate.append(f't.setheading({90})\n')
+    
 def t_end():#结束
     global tk_operate
     t.end_fill()
@@ -34,6 +35,7 @@ def undo():#撤销
         tk_operate.pop()
     except IndexError:
         tk.messagebox.showinfo(title = '错误',message = '无法继续撤销')
+        
 def rest():#重置
     global tk_operate
     tk_operate = []
@@ -73,35 +75,35 @@ def t_up():#上
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1,val2+line_b)
-    tk_operate.append(f't.goto({val1},{val2+line_b})\n')
+    t.goto(val1,val2 + line_b)
+    tk_operate.append(f't.goto({val1},{val2 + line_b})\n')
     
 def t_down():#下
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1,val2-line_b)
-    tk_operate.append(f't.goto({val1},{val2-line_b})\n')
+    t.goto(val1,val2 - line_b)
+    tk_operate.append(f't.goto({val1},{val2 - line_b})\n')
     
 def t_right():#左
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1-line_b,val2)
-    tk_operate.append(f't.goto({val1-line_b},{val2})\n')
+    t.goto(val1 - line_b,val2)
+    tk_operate.append(f't.goto({val1 - line_b},{val2})\n')
     
 def t_left():#右
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1+line_b,val2)
-    tk_operate.append(f't.goto({val1+line_b},{val2})\n')
+    t.goto(val1 + line_b,val2)
+    tk_operate.append(f't.goto({val1 + line_b},{val2})\n')
 
 b1 = tk.Button(fre,text = '上',width = 5,height = 2,command = t_up)
 b1.place(x = 160,y = 10)
 
 b2 = tk.Button(fre,text = '下',width = 5,height = 2,command = t_down)
-b2.place(x=160,y=110)
+b2.place(x = 160,y = 110)
 
 b3 = tk.Button(fre,text = '左',width = 5,height = 2,command = t_right)
 b3.place(x = 110,y = 60)
@@ -177,6 +179,7 @@ b9.place(x = 210,y = 10)
 '''设置画笔移动到指定位置'''
 go_x = tk.Entry(fre,width = 6)#x
 go_x.place(x = 130,y = 310)
+
 go_y = tk.Entry(fre,width = 6)#y
 go_y.place(x = 210,y = 310)
 
@@ -300,10 +303,9 @@ def rgb_l():#线条设置函数
         else:
             tk_operate.append('t.colormode(255)\n')
             tk_operate.append(f't.pencolor({R},{G},{B})\n')
+            
 #定义按钮
-rgb_button1=tk.Button(fre,text = '设置线条颜色RGB值',
-                      width = 16,height = 2,command = rgb_l)
-
+rgb_button1=tk.Button(fre,text = '设置线条颜色RGB值',width = 16,height = 2,command = rgb_l)
 rgb_button1.place(x = 335,y = 340)
 
 #RGB填充颜色设置
@@ -333,9 +335,7 @@ g_entry2.place(x = 380,y = 410)
 b_entry2 = tk.Entry(fre,width = 4)
 b_entry2.place(x = 430,y = 410)
 
-rgb_button2 = tk.Button(fre,text = '设置填充颜色RGB值',
-                      width = 16,height = 2,command = rgb_t)
-
+rgb_button2 = tk.Button(fre,text = '设置填充颜色RGB值',width = 16,height = 2,command = rgb_t)
 rgb_button2.place(x = 335,y = 440)
 
 '''画圆与多边形'''
@@ -348,9 +348,9 @@ y_entry2.place(x = 110,y = 435)
 #提示用按钮
 roundx = tk.Button(fre,text = '半径',width = 4,height = 1)
 roundx.place(x = 60,y = 400)
+
 roundy = tk.Button(fre,text = '角度',width = 4,height = 1)
 roundy.place(x = 60,y = 430)
-
 
 def r_round():#用于绘制圆和圆弧
     global tk_operate
@@ -406,9 +406,7 @@ def xy_round():#用于到指定位置绘制圆
         tk_operate.append(f't.circle({var1})\n')
         
 #button_round_x_y
-b_rxy = tk.Button(fre,text = '指定位置画圆',
-                width = 15,height = 2,
-                command = xy_round)
+b_rxy = tk.Button(fre,text = '指定位置画圆',width = 15,height = 2,command = xy_round)
 b_rxy.place(x = 115,y = 520)
 
 #提示用按钮
