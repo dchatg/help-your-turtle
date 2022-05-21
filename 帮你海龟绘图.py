@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu May 19 18:55:47 2022
+Created on Sat May 21 15:16:12 2022
 
-@author: dchatg
+@author: x5786
 """
 
 import turtle as t
@@ -48,6 +48,7 @@ def t_no():#箭头不可见
     global tk_operate
     t.showturtle()
     tk_operate.append('t.showturtle()\n')
+    
 '''定义开始、结束、撤销、重置等操作按钮'''
 s1 = tk.Button(fre,text ='开始',width = 5,height = 2,command = t_start)
 s1.place(x = 10,y = 10)
@@ -74,18 +75,21 @@ def t_up():#上
     val1,val2 = int(val1),int(val2)
     t.goto(val1,val2+line_b)
     tk_operate.append(f't.goto({val1},{val2+line_b})\n')
+    
 def t_down():#下
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
     t.goto(val1,val2-line_b)
     tk_operate.append(f't.goto({val1},{val2-line_b})\n')
+    
 def t_right():#左
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
     t.goto(val1-line_b,val2)
     tk_operate.append(f't.goto({val1-line_b},{val2})\n')
+    
 def t_left():#右
     global tk_operate
     val1,val2 = t.position()
@@ -192,11 +196,14 @@ def to_go():#移动到指定位置
         
 b_go = tk.Button(fre,text = '移动到指定位置',width = 14,height = 2,command = to_go)
 b_go.place(x = 140,y = 335)
+
 #设置提示按钮
 b_gox = tk.Button(fre,text = 'x',width = 2,height = 1)
 b_gox.place(x = 105,y = 305)
+
 b_goy = tk.Button(fre,text = 'y',width = 2,height = 1)
 b_goy.place(x = 185,y = 305)
+
 '''设置海龟绘图线条和填充'''
 e1 = tk.Entry(fre,width = 5)#设置线条宽度
 e1.place(x = 330,y = 25)
@@ -221,7 +228,6 @@ def k_d():#turtle线条宽度
         t.pensize(var)
         tk_operate.append(f't.pensize({var})\n')
         
-        
 line_b = 5#默认步长
 def b_c():#设置线条步长
     global tk_operate
@@ -234,7 +240,6 @@ def b_c():#设置线条步长
     else:
         line_b = var
 
-        
 def y_s():#turtle线条颜色
     global tk_operate
     var = e2.get()
@@ -422,6 +427,8 @@ def tk_export():
         for i in tk_operate:
             tul.write(i)
         tul.write('t.exitonclick()')
+    #导出完成提示
+    tk.messagebox.showinfo(title = '完成',message = "操作数据导出完成\n名为:\n海龟绘图操作导出.txt \n,位于同一文件中")
             
 export = tk.Button(fre,text = '导出操作文件',width = 11,height = 2,command = tk_export)
 export.place(x = 400,y = 540)
@@ -430,4 +437,23 @@ export.place(x = 400,y = 540)
 if __name__ == "__main__":
     fre.mainloop()
     t.exitonclick()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
