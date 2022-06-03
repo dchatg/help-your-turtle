@@ -1,8 +1,11 @@
 # help-your-turtle
 用python库帮你海龟绘图 turtle   
 使用了python的tkinter 和 turtle   
-只有单独一个文件，可以放到任何你想放到文件夹双击运行即可(需要你的计算机安装了python)。
-![capture_20220520203302295](https://user-images.githubusercontent.com/99422473/169529092-00968933-8919-4110-8e4f-6fa6c62efae0.jpeg)
+一共两个文件  
+帮你海龟绘图1_2.py  
+海龟绘图支持颜色.txt   
+这两个文件需放在同一文件夹,双击运行即可(需要你的计算机安装了python)。
+![主页面](https://user-images.githubusercontent.com/99422473/171906875-dad817d5-76af-473e-894c-3cc425710367.jpeg)
   
 --
 具体使用方法：   
@@ -30,10 +33,20 @@
 
 另存为.py文件可直接运行,也可以选择复制进Pycharm、Spyder、Jupyter Notebook  
 
+--
+文字写入
 --  
---  
---  
---  
+2022/6/4增加了对文字的写入，需要在绘图中设置字号，填入文字，选择写入位置，点击“写入”  
+示例:  
+![测试用例](https://user-images.githubusercontent.com/99422473/171907351-6f76c249-3c02-4629-9de7-e052fdc6f5de.jpeg)
+
+-- 
+操作导出
+--
+复制进py文件中可直接运行  
+示例:  
+![导出txt](https://user-images.githubusercontent.com/99422473/171907772-0edda284-45a5-4045-b212-44fa7832d643.jpeg)
+
 --  
 --  
 --
@@ -51,18 +64,19 @@
   
 支持移动到指定位置（x,y),移动过程中不会留下画迹  
   
-支持画圆，画弧，circle(value),circle(value,extent)
+支持画圆，画弧，circle(value),circle(value,extent)  
+
+支持写入文字，可指定文字字号、字体、写入位置  
   
 支持到指定位置画圆，指定的位置为圆心
 
 支持对画笔线条颜色、填充颜色以RGB设置
   
-  
 --
 后续待办 
 --
 
-1、加入文字功能 wirte()  
+1、加入文字功能 write() (√) 已完成 
   
 2、加入多边形绘制功能 cricle(x,steps)  
   
