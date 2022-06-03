@@ -12,11 +12,16 @@
 -- 
 由于turtle填充形状时需要在开始绘制前设置线条颜色与填充形状  
 
-所以第一步是设置好线条颜色与填充颜色，为colorstring 指定的 Tk 颜色描述字符串 如'red','yellow','blue','black'等--------这两个默认为黑色 black，写了try except，所以填入错误的字符串会提示
+所以第一步是设置好线条颜色与填充颜色，为colorstring 指定的 Tk 颜色描述字符串 如'red','yellow','blue','black'等--------这两个默认为黑色 black，写了try except，填入错误的字符串会提示
   
-![capture_20220520203302295](https://user-images.githubusercontent.com/99422473/169559854-4e1b4dd8-b217-471e-84e2-6d8833b7bc88.jpeg)
+![capture_20220520203302295](https://user-images.githubusercontent.com/99422473/169559854-4e1b4dd8-b217-471e-84e2-6d8833b7bc88.jpeg)  
 
-然后设置所需的线条步长，因为线条步长决定了每次对'上下左右'操作时的位移量--------这个默认值为 5
+点击填充颜色帮助可获得颜色描述字符串  
+![帮助jpeg](https://user-images.githubusercontent.com/99422473/171919403-7e11f1b7-a3b6-4561-9b86-b36e7d838657.jpeg)  
+点击后  
+![填充颜色帮助](https://user-images.githubusercontent.com/99422473/171919573-61140070-6dd1-4b92-9135-78654dd7ee5b.jpeg)    
+
+然后设置所需的线条步长，因为线条步长决定了每次对'上下左右'操作时的位移量--------这个默认值为 5  
 
 最后设置你的线条宽度就是turtle中的penisze()--------默认值为turtle的默认值 1  
 ![capture_20220520203302296](https://user-images.githubusercontent.com/99422473/169560676-5dbf499b-dd14-48a2-84aa-d68f3750d198.jpeg)
@@ -66,7 +71,7 @@
   
 支持画圆，画弧，circle(value),circle(value,extent)  
 
-支持写入文字，可指定文字字号、字体、写入位置  
+支持写入文字，可指定文字字号、字体、写入位置(海龟左、中、右)  
   
 支持到指定位置画圆，指定的位置为圆心
 
@@ -80,7 +85,7 @@
   
 2、加入多边形绘制功能 cricle(x,steps)  
   
-3、优化页面显示
+3、优化页面显示 (进行中)
   
 
 
