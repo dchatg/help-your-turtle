@@ -10,10 +10,10 @@ import tkinter as tk
 from tkinter.ttk import Combobox
 
 '''设置页面格式'''
-fre=tk.Tk()
+fre = tk.Tk()
 fre.title('turtle绘图')
 fre.geometry('500x750')
-tk_operate=[]
+tk_operate = []
 
 
 '''定义按键所需函数'''
@@ -75,29 +75,29 @@ def t_up():#上
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1,val2+line_b)
-    tk_operate.append(f't.goto({val1},{val2+line_b})')
+    t.goto(val1,val2 + line_b)
+    tk_operate.append(f't.goto({val1},{val2 + line_b})')
     
 def t_down():#下
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1,val2-line_b)
-    tk_operate.append(f't.goto({val1},{val2-line_b})')
+    t.goto(val1,val2 - line_b)
+    tk_operate.append(f't.goto({val1},{val2 - line_b})')
     
 def t_right():#左
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1-line_b,val2)
-    tk_operate.append(f't.goto({val1-line_b},{val2})')
+    t.goto(val1 - line_b,val2)
+    tk_operate.append(f't.goto({val1 - line_b},{val2})')
     
 def t_left():#右
     global tk_operate
     val1,val2 = t.position()
     val1,val2 = int(val1),int(val2)
-    t.goto(val1+line_b,val2)
-    tk_operate.append(f't.goto({val1+line_b},{val2})')
+    t.goto(val1 + line_b,val2)
+    tk_operate.append(f't.goto({val1 + line_b},{val2})')
 
 b1 = tk.Button(fre,text = '上',width = 5,height = 2,command = t_up)
 b1.place(x = 160,y = 10)
@@ -303,7 +303,7 @@ def rgb_l():#线条设置函数
             tk_operate.append('t.colormode(255)')
             tk_operate.append(f't.pencolor({R},{G},{B})')
 #定义按钮
-rgb_button1=tk.Button(fre,text = '设置线条颜色RGB值',
+rgb_button1 = tk.Button(fre,text = '设置线条颜色RGB值',
                       width = 16,height = 2,command = rgb_l)
 
 rgb_button1.place(x = 335,y = 340)
@@ -430,7 +430,7 @@ def xy_round():#用于到指定位置绘制圆
         t.circle(var1)
         tk_operate.append('t.penup()')
         tk_operate.append('t.setheading(90)')
-        tk_operate.append(f't.circle({var1})')
+        tk_operate.append(f't.goto({x+var1},{y})')
         tk_operate.append('t.pendown()')
         tk_operate.append(f't.circle({var1})')
         
@@ -508,7 +508,7 @@ def tk_export():
         tul.write('t.exitonclick()')
     #导出完成提示
     tk.messagebox.showinfo(title = '完成',message = "操作数据导出完成\n名为: 海龟绘图操作导出.txt \n位于同一文件中")
-            
+#文件导出按钮       
 export = tk.Button(fre,text = '导出操作文件',width = 11,height = 2,command = tk_export)
 export.place(x = 385,y = 640)
 
