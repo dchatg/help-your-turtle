@@ -1,12 +1,19 @@
 # help-your-turtle
 用python库帮你海龟绘图 turtle   
-使用了python的tkinter 和 turtle   
-一共两个文件  
-帮你海龟绘图1_2.py  
-海龟绘图支持颜色.txt   
-这两个文件需放在同一文件夹,双击“帮你海龟绘图1_2.py ”运行即可(需要你的计算机安装了python)。
+使用了python的tkinter 和 turtle  
+反馈问题请发邮件至:  
+dchat@foxmail.com  
+
+
+下载文件 
+--
+1、本地未下载python  
+   下载"帮你海龟绘图1_2.exe" 文件。  
+2、本地下载了python   
+   下载"帮你海龟绘图1_2.py" 文件。  
+双击运行即可看到：     
 ![主页面](https://user-images.githubusercontent.com/99422473/171906875-dad817d5-76af-473e-894c-3cc425710367.jpeg)
-  
+
 --
 具体使用方法：   
 -- 
@@ -50,7 +57,8 @@
 -- 
 操作导出
 --
-复制进py文件中可直接运行  
+导出文件位于exe/py 文件所在文件夹，名为"海龟绘图操作导出.txt"  
+更名为.py 文件可直接运行  
 示例:  
 ![导出txt](https://user-images.githubusercontent.com/99422473/171907772-0edda284-45a5-4045-b212-44fa7832d643.jpeg)
 
@@ -83,11 +91,15 @@
 后续待办 
 --
 
-1、加入文字功能 write() (√) 已完成 
+1、加入文字功能 write()  (√) 已完成 
   
-2、加入多边形绘制功能 cricle(x,steps)  
+2、编译为.exe  (√) 已完成  
   
-3、优化页面显示 (进行中)
+3、优化页面显示 (进行中)  
+  
+4、加入多边形绘制功能 cricle(x,steps)  
+  
+
   
 
 
