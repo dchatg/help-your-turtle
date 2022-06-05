@@ -54,9 +54,8 @@ dchat@foxmail.com
 操作导出
 --
 点击"导出操作文件"  
-
-![Uploading 导出按钮.jpeg…]()  
   
+![导出按钮](https://user-images.githubusercontent.com/99422473/172039431-24b5a0de-214d-46a7-9be7-23f7caaafed6.jpeg)  
 导出文件位于exe/py 文件所在文件夹，名为"海龟绘图操作导出.txt"  
 更名为.py 文件可直接运行  
 示例:  
