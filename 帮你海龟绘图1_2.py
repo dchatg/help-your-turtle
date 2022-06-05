@@ -185,7 +185,7 @@ go_y.place(x = 210,y = 310)
 def to_go():#移动到指定位置
     x,y = go_x.get(),go_y.get()
     try:
-        x,y = int(x),int()
+        x,y = int(x),int(y)
     except ValueError:
         tk.messagebox.showinfo(title = '错误',message = 'x,y位置错误输入')
     else:
