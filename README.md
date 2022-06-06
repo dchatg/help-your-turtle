@@ -7,12 +7,12 @@ dchat@foxmail.com
 
 下载文件 
 --
-1、本地未下载python  
-   下载"帮你海龟绘图1_2.exe" 文件。  
-2、本地下载了python   
-   下载"帮你海龟绘图1_2.py" 文件。  
+1、本地未安装python  
+   下载"help_your_turtle.exe" 文件。  
+2、本地安装了python   
+   下载"help_your_turtle.py" 文件。  
 双击运行即可看到：     
-![主页面](https://user-images.githubusercontent.com/99422473/171906875-dad817d5-76af-473e-894c-3cc425710367.jpeg)
+![主页面](https://user-images.githubusercontent.com/99422473/172176515-998dd887-5b23-4993-aa12-ba0a6f4aff46.jpeg)  
 
 --
 具体使用方法：   
@@ -28,8 +28,7 @@ dchat@foxmail.com
 点击填充颜色帮助可获得颜色描述字符串  
 ![帮助jpeg](https://user-images.githubusercontent.com/99422473/171919403-7e11f1b7-a3b6-4561-9b86-b36e7d838657.jpeg)  
 点击后  
-![填充颜色帮助](https://user-images.githubusercontent.com/99422473/171919573-61140070-6dd1-4b92-9135-78654dd7ee5b.jpeg)    
-
+    
 然后设置所需的线条步长，因为线条步长决定了每次对'上下左右'操作时的位移量--------这个默认值为 5  
 
 最后设置你的线条宽度指向turtle的penisze()--------默认值为1  
@@ -48,20 +47,18 @@ dchat@foxmail.com
 --  
 2022/6/4增加了对文字的写入，需要在绘图中设置字号，填入文字，选择写入位置，点击“写入”  
 示例:  
-![测试用例](https://user-images.githubusercontent.com/99422473/171907351-6f76c249-3c02-4629-9de7-e052fdc6f5de.jpeg)
+![测试用例](https://user-images.githubusercontent.com/99422473/171907351-6f76c249-3c02-4629-9de7-e052fdc6f5de.jpeg)  
 
 -- 
 操作导出
 --
-点击"导出操作文件"  
+可选导出文件为".txt" or ".py" 格式，默认为py文件  
+![py_or_txt](https://user-images.githubusercontent.com/99422473/172177865-9d310e53-5f77-4923-a062-28f1cb07dde4.jpeg)  
   
-![导出按钮](https://user-images.githubusercontent.com/99422473/172039431-24b5a0de-214d-46a7-9be7-23f7caaafed6.jpeg)  
-导出文件位于exe/py 文件所在文件夹，名为"海龟绘图操作导出.txt"  
-更名为.py 文件可直接运行  
-示例:  
-![导出txt](https://user-images.githubusercontent.com/99422473/171907772-0edda284-45a5-4045-b212-44fa7832d643.jpeg)
+点击"导出操作文件"   
+导出文件位于exe文件/py文件 所在文件夹，名为"help_your_turtle.txt" or "help_your_turtle.py"  
+.py 文件可直接运行   
 
---  
 --  
 --
 支持操作
@@ -85,6 +82,8 @@ dchat@foxmail.com
 支持到指定位置画圆，指定的位置为圆心
 
 支持对画笔线条颜色、填充颜色以RGB设置
+   
+支持对导出文件格式的选择(".py",".txt")
   
 --
 后续待办 
@@ -94,9 +93,11 @@ dchat@foxmail.com
   
 2、编译为.exe  (√) 已完成  
   
-3、优化页面显示 (进行中)  
+3、增加导出文件格式选择 (√) 已完成
   
-4、加入多边形绘制功能 cricle(x,steps)  
+4、优化页面显示 (进行中)  
+  
+5、加入多边形绘制功能 cricle(x,steps)  
   
 
   
